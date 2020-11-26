@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 20:14:27 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/24 19:48:07 by sunbchoi         ###   ########.fr       */
+/*   Created: 2020/11/26 18:27:13 by sunbchoi          #+#    #+#             */
+/*   Updated: 2020/11/26 18:47:17 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_ultimate_ft(int *********nbr)
+char	*ft_strstr(char *str, char *to_find)
 {
-	*********nbr = 42;
+	int	loop;
+	int cur_pos;
+
+	cur_pos = 0;
+	loop = 0;
+	if (*to_find == 0)
+		return (str);
+	while (str[cur_pos] != 0)
+	{
+		loop = 0;
+		while ((str[cur_pos + loop] == to_find[loop]) && to_find[loop] != 0)
+		{
+			loop++;
+			if (to_find[loop] == 0)
+			{
+				return (&str[cur_pos]);
+			}
+		}
+		cur_pos++;
+	}
+	return (0);
 }

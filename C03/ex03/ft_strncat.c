@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sunbchoi <sunbchoi@student.42seoul.kr      +#+  +:+       +#+        */
+/*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/21 16:21:59 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/24 01:23:19 by sunbchoi         ###   ########.fr       */
+/*   Created: 2020/11/26 18:16:12 by sunbchoi          #+#    #+#             */
+/*   Updated: 2020/11/26 18:22:27 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-extern void ft_div_mod(int a, int b, int *div, int *mod);
-
-int main()
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int div;
-	int mod;
+	int loop;
 
-	ft_div_mod(35, 10, &div, &mod);
-	printf("div %d, mod %d", div, mod);
+	loop = 0;
+	while (*dest != 0)
+	{
+		dest++;
+	}
+	while (loop < nb && src[loop] != 0)
+	{
+		dest[loop] = src[loop]
+		loop++;
+	}
+	dest[loop] = 0;
+	return (dest);
 }
-
-
