@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 20:14:27 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/28 23:47:02 by sunbchoi         ###   ########.fr       */
+/*   Created: 2020/11/29 01:09:29 by sunbchoi          #+#    #+#             */
+/*   Updated: 2020/11/29 01:11:01 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strlowcase(char *str)
+int	ft_strlen(char *str)
 {
-	int		l;
-	char	interval;
+	int len;
 
-	interval = 'a' - 'A';
-	l = 0;
-	while (str[l] != 0)
+	len = 0;
+	while (str[len] != 0)
 	{
-		if (str[l] >= 'A' && str[l] <= 'Z')
-		{
-			str[l] += interval;
-		}
-		l++;
+		loop++;
 	}
-	return (str);
+	return (loop);
 }

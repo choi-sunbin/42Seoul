@@ -6,7 +6,7 @@
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 20:14:27 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/25 15:55:13 by sunbchoi         ###   ########.fr       */
+/*   Updated: 2020/11/29 00:18:49 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		length++;
 	}
 	loop = 0;
-	while (loop < size-1 && src[loop] != 0)
+	while (loop < size - 1 && src[loop] != 0)
 	{
 		dest[loop] = src[loop];
 		loop++;

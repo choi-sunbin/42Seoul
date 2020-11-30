@@ -6,7 +6,7 @@
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 18:16:12 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/26 18:22:27 by sunbchoi         ###   ########.fr       */
+/*   Updated: 2020/11/29 00:38:30 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	}
 	while (loop < nb && src[loop] != 0)
 	{
-		dest[loop] = src[loop]
+		dest[loop] = src[loop];
 		loop++;
 	}
 	dest[loop] = 0;

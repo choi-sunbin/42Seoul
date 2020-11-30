@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 20:14:27 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/28 23:47:02 by sunbchoi         ###   ########.fr       */
+/*   Created: 2020/11/29 01:21:00 by sunbchoi          #+#    #+#             */
+/*   Updated: 2020/11/29 01:43:55 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strlowcase(char *str)
+int		ft_atoi(char *str)
 {
-	int		l;
-	char	interval;
+	int value;
+	int sign;
 
-	interval = 'a' - 'A';
-	l = 0;
-	while (str[l] != 0)
+	value = 0;
+	sign = 0;
+	while (!(*str >= '0' && *str <= '9'))
 	{
-		if (str[l] >= 'A' && str[l] <= 'Z')
-		{
-			str[l] += interval;
-		}
-		l++;
+		if (*str == '-')
+			sign++;
+		printf("%c\n", *str);
+		str++;
 	}
-	return (str);
+	while (*str != 0)
+	{
+		value *= 10;
+		value += *str - '0';
+		str++;
+	}
+	if (sign % 2 == 1)
+		value *= -1;
+	return (value);
 }

@@ -6,7 +6,7 @@
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 20:14:27 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/25 23:37:21 by sunbchoi         ###   ########.fr       */
+/*   Updated: 2020/11/29 00:21:18 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	word_check(char c)
+int		word_check(char c)
 {
 	if (c >= ' ' && c <= '~')
 	{
@@ -36,14 +36,13 @@ void	print_hex(unsigned char c)
 
 	l_value = c / 16;
 	r_value = c % 16;
-
 	if (l_value >= 10)
 		l_value += 'a' - 10;
-	else 
+	else
 		l_value += '0';
 	if (r_value >= 10)
 		r_value += 'a' - 10;
-	else 
+	else
 		r_value += '0';
 	ft_putchar('\\');
 	ft_putchar(l_value);
@@ -66,10 +65,4 @@ void	ft_putstr_non_printable(char *str)
 		}
 		loop++;
 	}
-}
-
-int main()
-{
-	char	*arr = "Coucou\ntu vas bien ?";
-	ft_putstr_non_printable(arr);
 }

@@ -6,7 +6,7 @@
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 00:37:13 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/26 18:03:30 by sunbchoi         ###   ########.fr       */
+/*   Updated: 2020/11/29 00:33:15 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int loop;
+	int l;
 
-	loop = 0
-	while ((s1[loop] != 0 || s2[loop] != 0)&& s1[loop] == s2[loop]  && loop < n)
+	l = 0;
+	while ((s1[l] != 0 || s2[l] != 0) && (s1[l] == s2[l] && l < n))
 	{
-		loop++;
+		l++;
 	}
-	if (loop == n)
+	if (l == n)
 	{
-		return 0;
+		return (0);
 	}
-	return ((unsigned char)s1[loop] - (unsigned char)s2[loop]);
+	return ((unsigned char)s1[l] - (unsigned char)s2[l]);
 }

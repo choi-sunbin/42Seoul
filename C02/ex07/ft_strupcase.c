@@ -6,7 +6,7 @@
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 20:14:27 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/25 15:35:57 by sunbchoi         ###   ########.fr       */
+/*   Updated: 2020/11/28 23:46:39 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strupcase(char *str)
 {
-	int l;
-	char interval;
+	int		l;
+	char	interval;
 
 	interval = 'A' - 'a';
 	l = 0;
