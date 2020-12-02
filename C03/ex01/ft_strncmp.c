@@ -6,7 +6,7 @@
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 00:37:13 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/29 00:33:15 by sunbchoi         ###   ########.fr       */
+/*   Updated: 2020/11/30 12:20:24 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int l;
+	unsigned int l;
 
 	l = 0;
 	while ((s1[l] != 0 || s2[l] != 0) && (s1[l] == s2[l] && l < n))

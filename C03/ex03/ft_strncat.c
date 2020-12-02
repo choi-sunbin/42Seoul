@@ -6,14 +6,16 @@
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 18:16:12 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/29 00:38:30 by sunbchoi         ###   ########.fr       */
+/*   Updated: 2020/11/30 13:19:24 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int loop;
+	unsigned int	loop;
+	char			*temp;
 
+	temp = dest;
 	loop = 0;
 	while (*dest != 0)
 	{
@@ -25,5 +27,5 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 		loop++;
 	}
 	dest[loop] = 0;
-	return (dest);
+	return (temp);
 }

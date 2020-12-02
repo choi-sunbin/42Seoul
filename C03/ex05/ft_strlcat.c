@@ -6,14 +6,15 @@
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 18:48:28 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/29 00:40:04 by sunbchoi         ###   ########.fr       */
+/*   Updated: 2020/11/30 13:17:01 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned int	ft_strlen(char *str)
 {
-	int loop;
+	unsigned int loop;
 
+	loop = 0;
 	while (str[loop] != 0)
 	{
 		loop++;
@@ -23,7 +24,7 @@ unsigned int	ft_strlen(char *str)
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int loop;
+	unsigned int loop;
 
 	loop = 0;
 	while (*dest != 0)
@@ -34,7 +35,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	if (size <= 0)
 		return (ft_strlen(src));
 	loop = 0;
-	while (src[loop] != 0 || loop < size - 1)
+	while (src[loop] != 0 && loop < size - 1)
 	{
 		dest[loop] = src[loop];
 		loop++;

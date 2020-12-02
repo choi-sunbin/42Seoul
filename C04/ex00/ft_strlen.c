@@ -6,16 +6,16 @@
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 01:09:29 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/29 01:11:01 by sunbchoi         ###   ########.fr       */
+/*   Updated: 2020/12/01 02:23:01 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int len;
+	int loop;
 
-	len = 0;
-	while (str[len] != 0)
+	loop = 0;
+	while (str[loop] != 0)
 	{
 		loop++;
 	}

@@ -6,7 +6,7 @@
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 20:14:27 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/29 00:21:18 by sunbchoi         ###   ########.fr       */
+/*   Updated: 2020/11/30 17:45:14 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_putstr_non_printable(char *str)
 {
 	int loop;
 
+	loop = 0;
 	while (str[loop] != 0)
 	{
 		if (word_check(str[loop]) == 0)

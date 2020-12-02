@@ -1,22 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sunbchoi <sunbchoi@student.42seoul.kr      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/21 16:21:59 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/11/24 01:46:01 by sunbchoi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include <unistd.h>
 #include <stdio.h>
 
-extern 
+extern char* ft_strcapitalize(char *str);
 
 int main()
-{	
-
+{
+	char str[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+	ft_strcapitalize(str);
+	printf("%s",str);
 }
-
-
