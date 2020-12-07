@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 01:50:09 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/12/07 16:29:55 by sunbchoi         ###   ########.fr       */
+/*   Updated: 2020/12/07 17:20:46 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int		main(int argc, char *argv[])
 
 	if (argc == 0)
 		return (0);
-	loop = 1;
-	while (loop < argc)
+	loop = argc - 1;
+	while (loop > 0)
 	{
 		text_loop = 0;
 		ft_putstr(argv[loop]);
-		loop++;
+		loop--;
 	}
 }

@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sunbchoi <sunbchoi@student.42seoul.kr      +#+  +:+       +#+        */
+/*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 01:50:09 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/12/07 16:29:55 by sunbchoi         ###   ########.fr       */
+/*   Created: 2020/11/26 00:37:13 by sunbchoi          #+#    #+#             */
+/*   Updated: 2020/11/30 12:12:05 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int loop;
 
 	loop = 0;
-	while (str[loop] != 0)
+	while ((s1[loop] != 0 || s2[loop] != 0) && s1[loop] == s2[loop])
 	{
-		write(1, &str[loop], 1);
 		loop++;
 	}
-	write(1, "\n", 1);
-}
-
-int		main(int argc, char *argv[])
-{
-	int loop;
-	int text_loop;
-
-	if (argc == 0)
-		return (0);
-	loop = 1;
-	while (loop < argc)
-	{
-		text_loop = 0;
-		ft_putstr(argv[loop]);
-		loop++;
-	}
+	return ((unsigned char)s1[loop] - (unsigned char)s2[loop]);
 }
