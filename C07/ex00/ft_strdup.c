@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 01:50:09 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/12/09 13:55:50 by sunbchoi         ###   ########.fr       */
+/*   Created: 2020/12/09 14:09:11 by sunbchoi          #+#    #+#             */
+/*   Updated: 2020/12/09 19:40:06 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putstr(char *str)
+char	*ft_strdup(char *src)
 {
-	int loop;
+	char	*dest;
+	int		len;
+	int		loop;
 
+	len = 0;
+	while (src[len] != 0)
+		len++;
+	dest = (char*)malloc(sizeof(char) * (len + 1));
+	if (dest == 0)
+		return (0);
 	loop = 0;
-	while (str[loop] != 0)
+	while (src[loop] != 0)
 	{
-		write(1, &str[loop], 1);
+		dest[loop] = src[loop];
 		loop++;
 	}
-	write(1, "\n", 1);
-}
-
-int		main(int argc, char *argv[])
-{
-	int loop;
-	int text_loop;
-
-	if (argc == 0)
-		return (0);
-	loop = argc - 1;
-	while (loop > 0)
-	{
-		text_loop = 0;
-		ft_putstr(argv[loop]);
-		loop--;
-	}
+	dest[loop] = '\0';
+	return (dest);
 }

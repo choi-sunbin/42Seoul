@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 01:50:09 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/12/09 13:55:50 by sunbchoi         ###   ########.fr       */
+/*   Created: 2020/12/09 14:09:59 by sunbchoi          #+#    #+#             */
+/*   Updated: 2020/12/09 19:40:25 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putstr(char *str)
+int		*ft_range(int min, int max)
 {
-	int loop;
+	int		*arr;
+	int		loop;
 
 	loop = 0;
-	while (str[loop] != 0)
+	arr = (int*)malloc(sizeof(int) * (max - min));
+	if (max - min <= 0)
 	{
-		write(1, &str[loop], 1);
+		return (0);
+	}
+	while (loop < max - min)
+	{
+		arr[loop] = min + loop;
 		loop++;
 	}
-	write(1, "\n", 1);
-}
-
-int		main(int argc, char *argv[])
-{
-	int loop;
-	int text_loop;
-
-	if (argc == 0)
-		return (0);
-	loop = argc - 1;
-	while (loop > 0)
-	{
-		text_loop = 0;
-		ft_putstr(argv[loop]);
-		loop--;
-	}
+	return (arr);
 }

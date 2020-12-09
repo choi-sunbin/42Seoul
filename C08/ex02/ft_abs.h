@@ -1,42 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 01:50:09 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/12/09 13:55:50 by sunbchoi         ###   ########.fr       */
+/*   Created: 2020/12/09 18:48:06 by sunbchoi          #+#    #+#             */
+/*   Updated: 2020/12/09 18:50:19 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_ABS_H
+# define FT_ABS_H
 
-void	ft_putstr(char *str)
-{
-	int loop;
+# define ABS(num) (num < 0 ? -num : num)
 
-	loop = 0;
-	while (str[loop] != 0)
-	{
-		write(1, &str[loop], 1);
-		loop++;
-	}
-	write(1, "\n", 1);
-}
-
-int		main(int argc, char *argv[])
-{
-	int loop;
-	int text_loop;
-
-	if (argc == 0)
-		return (0);
-	loop = argc - 1;
-	while (loop > 0)
-	{
-		text_loop = 0;
-		ft_putstr(argv[loop]);
-		loop--;
-	}
-}
+#endif

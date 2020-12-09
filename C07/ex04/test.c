@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 01:50:09 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/12/09 13:55:50 by sunbchoi         ###   ########.fr       */
+/*   Created: 2020/12/09 18:01:06 by sunbchoi          #+#    #+#             */
+/*   Updated: 2020/12/09 19:48:13 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putstr(char *str)
+extern char *ft_convert_base(char *nbr, char *base_from, char* base_to);
+
+int main()
 {
-	int loop;
+	char* str;
 
-	loop = 0;
-	while (str[loop] != 0)
-	{
-		write(1, &str[loop], 1);
-		loop++;
-	}
-	write(1, "\n", 1);
-}
-
-int		main(int argc, char *argv[])
-{
-	int loop;
-	int text_loop;
-
-	if (argc == 0)
-		return (0);
-	loop = argc - 1;
-	while (loop > 0)
-	{
-		text_loop = 0;
-		ft_putstr(argv[loop]);
-		loop--;
-	}
+	str = ft_convert_base("  ++-BBCCDD", "ABCDEFGHIJ", "012");
+	printf("%s", str);
 }

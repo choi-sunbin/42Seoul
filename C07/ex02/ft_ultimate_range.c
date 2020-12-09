@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 01:50:09 by sunbchoi          #+#    #+#             */
-/*   Updated: 2020/12/09 13:55:50 by sunbchoi         ###   ########.fr       */
+/*   Created: 2020/12/09 15:44:10 by sunbchoi          #+#    #+#             */
+/*   Updated: 2020/12/09 15:59:56 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putstr(char *str)
+int		ft_ultimate_range(int **range, int min, int max)
 {
-	int loop;
+	int		loop;
 
+	if (min >= max)
+		return (0);
+	range[0] = (int*)malloc(sizeof(int) * (max - min));
+	if (range[0] == 0)
+		return (-1);
 	loop = 0;
-	while (str[loop] != 0)
+	while (loop < max - min)
 	{
-		write(1, &str[loop], 1);
+		range[0][loop] = min + loop;
 		loop++;
 	}
-	write(1, "\n", 1);
-}
-
-int		main(int argc, char *argv[])
-{
-	int loop;
-	int text_loop;
-
-	if (argc == 0)
-		return (0);
-	loop = argc - 1;
-	while (loop > 0)
-	{
-		text_loop = 0;
-		ft_putstr(argv[loop]);
-		loop--;
-	}
+	return (loop);
 }
